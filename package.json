@@ -1,6 +1,6 @@
 {
   "name": "@mailbean/pm2html",
-  "version": "0.0.51",
+  "version": "0.0.52",
   "description": "ProseMirror to HTML",
   "main": "dist/main/index.js",
   "module": "dist/module/index.js",
@@ -42,5 +42,12 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/module/index.js",
+      "require": "./dist/main/index.js"
+    },
+    "./package.json": "./package.json"
   }
 }
