@@ -1,9 +1,10 @@
 {
   "name": "@mailbean/pm2html",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "ProseMirror to HTML",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
     "build": "npx tsc",
     "pub": "npm run build && npm version patch --force && npm publish --access public"
