@@ -1,6 +1,6 @@
 {
   "name": "@mailbean/pm2html",
-  "version": "0.0.52",
+  "version": "0.0.53",
   "description": "ProseMirror to HTML",
   "main": "dist/main/index.js",
   "module": "dist/module/index.js",
@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "format": "prettier --write \"{src,test}/**/*.ts\"",
-    "build": "run-s clean format build:*",
+    "build": "run-s clean format build:* && ./fixup",
     "build:main": "npx tsc -p tsconfig.json",
     "build:module": "npx tsc -p tsconfig.module.json",
     "pub": "npm run build && npm version patch --force && npm publish --access public"
