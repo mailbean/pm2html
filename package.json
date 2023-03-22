@@ -1,11 +1,11 @@
 {
   "name": "@mailbean/pm2html",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "ProseMirror to HTML",
   "main": "dist/index.js",
   "scripts": {
     "build": "npx tsc",
-    "publish": "npm run build && npm version patch --force && npm publish dist --access public"
+    "publish": "npm run build && npm version patch --force && npm publish --access public"
   },
   "repository": {
     "type": "git",
