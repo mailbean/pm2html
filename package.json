@@ -1,11 +1,10 @@
 {
   "name": "@mailbean/pm2html",
-  "version": "0.0.40",
+  "version": "0.0.41",
   "description": "ProseMirror to HTML",
   "main": "dist/main/index.js",
   "module": "dist/module/index.js",
-  "types": "dist/index.d.ts",
-  "type": "module",
+  "types": "dist/module/index.d.ts",
   "scripts": {
     "clean": "rimraf dist",
     "format": "prettier --write \"{src,test}/**/*.ts\"",
