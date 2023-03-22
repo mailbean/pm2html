@@ -1,6 +1,6 @@
 {
   "name": "@mailbean/pm2html",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "ProseMirror to HTML",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
