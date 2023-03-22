@@ -1,6 +1,6 @@
 {
   "name": "@mailbean/pm2html",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "description": "ProseMirror to HTML",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/mailbean/pm2html#readme",
   "devDependencies": {
+    "@tsconfig/node18-strictest-esm": "^1.0.1",
     "@types/node": "^18.15.5",
     "typescript": "^5.0.2"
   },
@@ -33,5 +34,12 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
   }
 }
