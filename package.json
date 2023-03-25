@@ -1,6 +1,6 @@
 {
-  "name": "@mailbean/pm2html",
-  "version": "0.0.55",
+  "name": "pm2html",
+  "version": "0.0.3",
   "description": "ProseMirror to HTML",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,7 +18,8 @@
   "keywords": [
     "prosemirror",
     "html",
-    "json"
+    "json",
+    "tiptap"
   ],
   "author": "Philipp Viereck",
   "license": "MIT",
@@ -40,5 +41,9 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "prosemirror-model": "^1.19.0",
+    "zeed-dom": "^0.10.4"
   }
 }
