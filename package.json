@@ -1,6 +1,6 @@
 {
   "name": "pm2html",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "ProseMirror to HTML",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "@tiptap/pm": "^2.0.0-beta.220",
+    "prosemirror-model": "^1.19.0",
     "zeed-dom": "^0.10.4"
   }
 }
