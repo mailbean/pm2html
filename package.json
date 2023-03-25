@@ -44,7 +44,6 @@
   },
   "dependencies": {
     "@tiptap/pm": "^2.0.0-beta.220",
-    "prosemirror-model": "^1.19.0",
     "zeed-dom": "^0.10.4"
   }
 }
