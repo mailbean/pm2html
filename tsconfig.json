@@ -1,38 +1,14 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@tsconfig/node18-strictest-esm/tsconfig.json",
   "compilerOptions": {
-    "declaration": true,
-    "incremental": true,
-    "moduleResolution": "node",
+    "ignoreDeprecations": "5.0", // Temporarily
+    "outDir": "dist",
     "module": "CommonJS",
-    // "lib": ["es2020"],
-    "target": "es5",
-    /**
-              svelte-preprocess cannot figure out whether you have a value or a type, so tell TypeScript
-              to enforce using \`import type\` instead of \`import\` for Types.
-              */
-    // "importsNotUsedAsValues": "error",
-    "verbatimModuleSyntax": true,
-    // "isolatedModules": true,
-    "resolveJsonModule": true,
-    /**
-              To have warnings/errors of the Svelte compiler at the correct position,
-              enable source maps by default.
-              */
-    "sourceMap": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
-    "allowJs": true,
-    "checkJs": true,
-    //   "paths": {
-    //     "$lib/*": ["src/lib/*"]
-    //   }
-
-    "strict": true,
-    "outDir": "dist"
+    "target": "ES2020",
+    "declaration": true,
+    "rootDir": "src",
+    "lib": ["ES2020", "DOM"]
   },
-  "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts"],
+  "include": ["src"],
   "exclude": ["node_modules", "dist"]
 }
