@@ -1,4 +1,5 @@
-import { DOMSerializer, Node, Schema } from 'prosemirror-model'
+// import { DOMSerializer, Node, Schema } from 'prosemirror-model'
+import { DOMSerializer, Node, Schema } from '@tiptap/pm/model'
 import { VHTMLDocument, createHTMLDocument } from 'zeed-dom'
 import type { SchemaTransformer } from './transformers'
 
