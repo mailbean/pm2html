@@ -1,6 +1,6 @@
 > :warning: **This is a work in progress**: The API might change at any time. Please open an issue if you have any suggestions to improve the API.
 
-> :mag: **Help Wanted**: If you have suggestions to immprove the API, please open an issue or a pull request.
+> :mag: **Help Wanted**: If you have suggestions to improve the API, please open an issue or a pull request.
 
 > :handshake: **Sharing is caring**: If you have any Transformer that you think might be useful to others, please open a pull request to add it to the included transformers.
 
@@ -33,7 +33,7 @@ const doc = /_ your ProseMirror node _/
 const html = renderer.render(doc)
 ```
 
-Common problems, ProseMirror adds a `<br>` tag to empty Textblocks, but removes them when you try to render the node to HTML. To fix this, you can use the `AddBreaksToEmptyTextblocks` transformer.
+If you want to get the `<br>` back, that ProseMirror removes from empty Textblocks when exporting to HTML, you can use the `AddBreaksToEmptyTextblocks` transformer to create your own DOMSerializer. This transformer will add `<br>` to empty textblocks
 
 ```javascript
 import { Renderer, AddBreaksToEmptyTextblocks } from 'pm2html'
