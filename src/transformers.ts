@@ -1,5 +1,4 @@
 import type { DOMOutputSpec, NodeType, Node } from 'prosemirror-model'
-// import type { DOMOutputSpec, NodeType, Node } from '@tiptap/pm/model'
 
 export type TransformFunction = ({
   oldToDOM,

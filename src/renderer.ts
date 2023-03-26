@@ -1,5 +1,5 @@
-import { DOMSerializer } from 'prosemirror-model'
-import type { Schema, Node } from 'prosemirror-model'
+import { DOMSerializer, Node } from 'prosemirror-model'
+import type { Schema } from 'prosemirror-model'
 import { VHTMLDocument, createHTMLDocument } from 'zeed-dom'
 import type { SchemaTransformer } from './transformers'
 
@@ -50,7 +50,8 @@ export class Renderer {
     this.serializer = DOMSerializer.fromSchema(this.schema)
   }
 
-  render(doc: Node): string {
+  render(docJSON: JSONContent): string {
+    const doc = Node.fromJSON(this.schema, docJSON)
     const document = this.serializer.serializeFragment(doc.content, {
       document: createHTMLDocument() as unknown as Document,
     }) as unknown as VHTMLDocument

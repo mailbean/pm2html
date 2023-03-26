@@ -1,14 +1,15 @@
 {
   "name": "pm2html",
-  "version": "0.1.4",
+  "version": "0.1.7",
   "description": "ProseMirror to HTML",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "umd": "dist/index.umd.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "clean": "rimraf dist",
     "format": "prettier --write \"{src,test}/**/*.ts\"",
-    "build": "run-s clean format build:*",
-    "build:main": "npx tsc -p tsconfig.json",
+    "build": "npm run clean && rollup -c",
     "pub": "npm run build && npm publish --access public"
   },
   "repository": {
@@ -28,11 +29,16 @@
   },
   "homepage": "https://github.com/mailbean/pm2html#readme",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "@tsconfig/node18-strictest-esm": "^1.0.1",
-    "@types/node": "^18.15.5",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.8.6",
-    "rimraf": "^4.4.0",
+    "@types/node": "^18.15.10",
+    "prettier": "^2.8.7",
+    "rimraf": "^4.4.1",
+    "rollup": "^2.79.1",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "rollup-plugin-typescript2": "^0.34.1",
     "typescript": "^5.0.2"
   },
   "files": [
@@ -43,7 +49,17 @@
     "access": "public"
   },
   "dependencies": {
-    "prosemirror-model": "^1.19.0",
     "zeed-dom": "^0.10.4"
+  },
+  "peerDependencies": {
+    "prosemirror-model": "^1.18.1"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
   }
 }
