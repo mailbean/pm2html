@@ -108,6 +108,10 @@ class AddClassToHeading implements SchemaTransformer {
 
 const schema = /_ your ProseMirror schema _/
 const renderer = new Renderer({ schema, transformers: [new AddClassToHeading()] })
+
+const doc = /_ your ProseMirror JSON _/
+
+const html = renderer.render(doc)
 ```
 
 ## Renderer
