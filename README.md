@@ -6,13 +6,13 @@
 
 # pm2html
 
-<!-- npm -->
-
 [![npm](https://img.shields.io/npm/v/pm2html.svg)](https://www.npmjs.com/package/pm2html)
 [![npm](https://img.shields.io/npm/dt/pm2html.svg)](https://www.npmjs.com/package/pm2html)
 [![npm](https://img.shields.io/npm/l/pm2html.svg)](https://www.npmjs.com/package/pm2html)
 
-This codebase contains the Renderer class and a SchemaTransformer interface, which are used to modify and render ProseMirror nodes/documents to HTML in Node.js
+<!-- Short summary -->
+
+pm2html is a framework that simplifies the process of modifying how ProseMirror nodes and documents get serialized to HTML. It provides a Renderer class that takes a ProseMirror schema and an array of transformers, and returns an HTML string of the document using the transformed schema. Transformers are objects that modify the toDOM function of a node, changing how it gets serialized to HTML. Two example transformers provided are AddBreaksToEmptyTextblocks and AddIdToHeadings.
 
 ## Installation
 
@@ -28,7 +28,7 @@ import { Renderer } from 'pm2html'
 const schema = /_ your ProseMirror schema _/
 const renderer = new Renderer({ schema })
 
-const doc = /_ your ProseMirror node _/
+const doc = /_ your ProseMirror JSON _/
 
 const html = renderer.render(doc)
 ```
@@ -40,6 +40,10 @@ import { Renderer, AddBreaksToEmptyTextblocks } from 'pm2html'
 
 const schema = /_ your ProseMirror schema _/
 const renderer = new Renderer({ schema, transformers: [new AddBreaksToEmptyTextblocks()] })
+
+const doc = /_ your ProseMirror JSON _/
+
+const html = renderer.render(doc)
 ```
 
 Or another example, if you want to add a class to all headings, you can use the `AddIdToHeadings` transformer.
@@ -52,6 +56,10 @@ const renderer = new Renderer({
   schema,
   transformers: [new AddIdToHeadings(/* your id generator */)],
 })
+
+const doc = /_ your ProseMirror JSON _/
+
+const html = renderer.render(doc)
 ```
 
 ## With TipTap

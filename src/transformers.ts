@@ -10,6 +10,11 @@ export type TransformFunction = ({
 
 export type ConditionFunction = (node: NodeType) => boolean
 
+/**
+ * Every object that implements this interface can be used as a transformer.
+ * The `transform` function is used to modify the toDOM function of a node. Therefore changing how the node gets serialized to HTML.
+ * The `condition` function is used to determine if the transformer should be applied to a NodeType.
+ */
 export interface SchemaTransformer {
   transform: TransformFunction
   condition: ConditionFunction
