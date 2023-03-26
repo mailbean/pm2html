@@ -16,6 +16,11 @@ export type JSONContent = {
   text?: string
 }
 
+/**
+ * RendererOptions
+ * @param schema - The schema to use for rendering
+ * @param transformers - An array of transformers to apply to the schema
+ */
 interface RendererOptions {
   schema: Schema
   transformers?: SchemaTransformer[]
@@ -26,6 +31,19 @@ export class Renderer {
   transformers: SchemaTransformer[]
   serializer: DOMSerializer
 
+  /**
+   * Renderer
+   * @param options - RendererOptions
+   * @param options.schema - The schema to use for rendering
+   * @param options.transformers - An array of transformers to apply to the schema
+   * @example
+   * const renderer = new Renderer({
+   *  schema,
+   * transformers: [ new AddBreaksToEmptyTextblocks()]
+   * })
+   *
+   * const html = renderer.render(doc)
+   * */
   constructor(options: RendererOptions) {
     this.schema = options.schema
     this.transformers = options.transformers || []
@@ -49,6 +67,12 @@ export class Renderer {
 
     this.serializer = DOMSerializer.fromSchema(this.schema)
   }
+
+  /**
+   * Render a document to HTML string
+   * @param docJSON - The document to render
+   * @returns The rendered HTML string of the document using the (transformed) schema
+   */
 
   render(docJSON: JSONContent): string {
     const doc = Node.fromJSON(this.schema, docJSON)

@@ -1,6 +1,6 @@
 {
   "name": "pm2html",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "ProseMirror to HTML",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
