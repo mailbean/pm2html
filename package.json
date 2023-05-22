@@ -32,7 +32,7 @@
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@tsconfig/node18-strictest-esm": "^1.0.1",
-    "@types/node": "^18.15.10",
+    "@types/node": "^20.2.3",
     "prettier": "^2.8.7",
     "rimraf": "^4.4.1",
     "rollup": "^2.79.1",
